@@ -7,7 +7,7 @@ import cn.cpf.app.gobang.entity.Place;
 import cn.cpf.app.gobang.entity.Pt;
 import cn.cpf.app.gobang.entity.Role;
 import cn.cpf.app.gobang.global.Config;
-import cn.cpf.app.gobang.validate.CpfUtilArr;
+import cn.cpf.app.gobang.util.CpfUtilArr;
 
 public class Situation implements Cloneable{
 
@@ -76,7 +76,7 @@ public class Situation implements Cloneable{
 //			for (int j = Config.BOARDLENGTH - 1; j >= 0; j--) {
 //				// 只计算空位
 //				if (board[i][j] == null){
-//					Place place = PlacePool.getPlace(i, j);
+//					Place place = Place.of(i, j);
 //					if (Base.hasNeighbor(board, place)) {
 //						int whiteScore = PointEvaluate.pointEvaluate(board, place, Pt.W);
 //						int blackScore = PointEvaluate.pointEvaluate(board, place, Pt.B);

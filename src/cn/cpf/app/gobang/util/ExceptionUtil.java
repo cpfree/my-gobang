@@ -1,4 +1,4 @@
-package cn.cpf.app.gobang.validate;
+package cn.cpf.app.gobang.util;
 
 /**
  * @author CPF

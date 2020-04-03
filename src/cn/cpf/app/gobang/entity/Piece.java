@@ -21,5 +21,5 @@ public class Piece extends JLabel{
 	public Pt getPart() {
 		return part;
 	}
-	
+
 }

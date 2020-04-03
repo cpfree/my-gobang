@@ -5,7 +5,7 @@ import cn.cpf.app.gobang.entity.Pt;
 import cn.cpf.app.gobang.entity.Score;
 import cn.cpf.app.gobang.entity.PointScoreDisposer;
 import cn.cpf.app.gobang.global.Config;
-import cn.cpf.app.gobang.validate.ExceptionUtil;
+import cn.cpf.app.gobang.util.ExceptionUtil;
 
 /**
  * @author CPF
@@ -20,8 +20,6 @@ public class PointEvaluate {
 	 */
 //	private static int EVALUTE_R = 3;
 
-
-	
 	/**
 	 * 小工具
 	 * @param num

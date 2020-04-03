@@ -6,7 +6,7 @@ import cn.cpf.app.gobang.entity.BoardScoreRecord;
 import cn.cpf.app.gobang.entity.Place;
 import cn.cpf.app.gobang.entity.Pt;
 import cn.cpf.app.gobang.entity.Score;
-import cn.cpf.app.gobang.validate.ExceptionUtil;
+import cn.cpf.app.gobang.util.ExceptionUtil;
 
 public class BoardEvaluate {
 

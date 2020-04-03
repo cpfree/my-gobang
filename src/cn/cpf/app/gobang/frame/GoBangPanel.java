@@ -11,12 +11,12 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
 import cn.cpf.app.gobang.algorithm.Compute;
-import cn.cpf.app.gobang.domain.PieceFactory;
-import cn.cpf.app.gobang.domain.PlacePool;
+import cn.cpf.app.gobang.res.PieceFactory;
 import cn.cpf.app.gobang.entity.Place;
 import cn.cpf.app.gobang.entity.Role;
 import cn.cpf.app.gobang.global.Config;
 import cn.cpf.app.gobang.global.Global;
+import cn.cpf.app.gobang.global.GobangDefined;
 import cn.cpf.app.gobang.impl.LambdaMouseListener;
 
 public class GoBangPanel extends JPanel implements LambdaMouseListener {
@@ -76,6 +76,11 @@ public class GoBangPanel extends JPanel implements LambdaMouseListener {
 	protected void run(){
 		new Thread(() -> {
 			while (Global.isComRunnable()) {
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
 				try {
 					// 若当前执棋手是 COM
 					if (Role.COM.equals(Global.getSituation().getCurRole())){
@@ -138,7 +143,7 @@ public class GoBangPanel extends JPanel implements LambdaMouseListener {
 				if (Role.MAN.equals(Global.getSituation().getCurRole())){// 若论到人下棋
 					// 获取落子点
 					Point point = e.getPoint();
-					Place place = PlacePool.getPlace(point);
+					Place place = GobangDefined.convertLocationToPlace(point);
 					// 如果点击的落子点位置没有棋子
 					if (Global.getSituation().getPiece(place) == null) {
 						// 添加棋子

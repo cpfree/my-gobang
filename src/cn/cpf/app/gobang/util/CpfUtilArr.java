@@ -1,4 +1,4 @@
-package cn.cpf.app.gobang.validate;
+package cn.cpf.app.gobang.util;
 
 import java.util.Objects;
 
@@ -28,6 +28,7 @@ public class CpfUtilArr {
 		for (; i < number; i++) {
 			num[i] = arr[i];
 		}
+
 		int product = getProductInArr(num);
 		int cur = 0;
 		int tmpProdect;
@@ -56,16 +57,6 @@ public class CpfUtilArr {
 		}
 		return product;
 	}
-    
-    public static int getSumInArr(int[] arr) {
-    	Objects.requireNonNull(arr);
-    	int sum = 0;
-		for (int len = arr.length, i = 0; i < len; i ++) {
-			sum += arr[i];
-		}
-		return sum;
-	}
-    
 	
 	/**
 	 * 转置矩阵, 矩阵必须是方形矩阵

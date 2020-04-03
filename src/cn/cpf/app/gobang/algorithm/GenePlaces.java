@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import cn.cpf.app.gobang.domain.PlacePool;
 import cn.cpf.app.gobang.entity.Place;
 import cn.cpf.app.gobang.entity.Pt;
 import cn.cpf.app.gobang.entity.Score;
@@ -12,8 +11,6 @@ import cn.cpf.app.gobang.entity.SortedPlaces;
 import cn.cpf.app.gobang.global.Config;
 
 public class GenePlaces {
-
-	
 
 	/**
 	 * @return 获取当前棋盘上可以下的点的List集合
@@ -24,7 +21,7 @@ public class GenePlaces {
 			for (int j = Config.BOARDLENGTH - 1; j >= 0; j--){
 				//TODO Place被复用太多次
 				if (board[i][j] == null){
-					Place place = PlacePool.getPlace(i, j);
+					Place place = Place.of(i, j);
 					// 判断棋盘上的点周围是否有邻居
 					if (Base.hasNeighbor(board, place)){
 						// TODO 加入其它判断
@@ -45,7 +42,7 @@ public class GenePlaces {
 			for (int j = Config.BOARDLENGTH - 1; j >= 0; j--){
 				//TODO Place被复用太多次
 				if (board[i][j] == null){
-					Place place = PlacePool.getPlace(i, j);
+					Place place = Place.of(i, j);
 					placeSet.add(place);
 				}
 			}
@@ -77,7 +74,7 @@ public class GenePlaces {
 			for (int j = Config.BOARDLENGTH - 1; j >= 0; j--){
 				//TODO Place被复用太多次
 				if (board[i][j] == null){
-					Place place = PlacePool.getPlace(i, j);
+					Place place = Place.of(i, j);
 					// 判断棋盘上的点周围是否有邻居
 					if (Base.hasNeighbor(board, place)){
 						// TODO 加入其它判断

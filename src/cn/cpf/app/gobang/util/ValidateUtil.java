@@ -1,4 +1,4 @@
-package cn.cpf.app.gobang.validate;
+package cn.cpf.app.gobang.util;
 
 import java.util.Collection;
 import java.util.Map;

@@ -14,9 +14,4 @@ public class Compute {
 		return new AlphaBeta().getEvaluatedPlace(Global.getSituation().getCurPart());
 	}
 
-	
-	
-	
-	
-	
 }

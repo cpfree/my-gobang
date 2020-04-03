@@ -1,6 +1,6 @@
 package cn.cpf.app.gobang.entity;
 
-import cn.cpf.app.gobang.validate.RequireUtil;
+import cn.cpf.app.gobang.util.RequireUtil;
 
 /**
  * @author CPF 

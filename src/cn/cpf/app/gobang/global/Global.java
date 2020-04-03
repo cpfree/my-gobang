@@ -1,7 +1,6 @@
 package cn.cpf.app.gobang.global;
 
 import cn.cpf.app.gobang.algorithm.Situation;
-import cn.cpf.app.gobang.domain.PlacePool;
 
 public class Global {
 
@@ -12,7 +11,6 @@ public class Global {
 	private static Situation situation = null;
 	
 	private static boolean comRunnable;
-	
 
 	/**
 	 * @return the comRunnable
@@ -30,7 +28,6 @@ public class Global {
 
 	public static void init(){
 		situation = new Situation();
-		PlacePool.init();
 	}
 	
 	public static Situation getSituation() {

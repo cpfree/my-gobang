@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 import cn.cpf.app.gobang.algorithm.Base;
 import cn.cpf.app.gobang.algorithm.PointEvaluate;
-import cn.cpf.app.gobang.domain.PlacePool;
 import cn.cpf.app.gobang.entity.Place;
 import cn.cpf.app.gobang.entity.Pt;
 import cn.cpf.app.gobang.global.Config;
@@ -20,7 +19,6 @@ public class Main {
 	
 	
 	public Main(){
-		PlacePool.init();
 		Pt[][] board0 = {
 				{null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
 				{null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
@@ -43,7 +41,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		Main main = new Main();
-//		boolean result = Base.isWin(main.board, PlacePool.getPlace(6, 7), Pt.B);
+//		boolean result = Base.isWin(main.board, Place.of(6, 7), Pt.B);
 //		System.out.println(result);
 //		main.evaluatePoint(7, 6, Pt.W);
 //		main.evaluatePoint(6, 7, Pt.W);
@@ -63,7 +61,7 @@ public class Main {
 	
 	
 	public void evaluatePoint(int i, int j, Pt part){
-		int s = PointEvaluate.pointEvaluate(board, PlacePool.getPlace(i, j), part);
+		int s = PointEvaluate.pointEvaluate(board, Place.of(i, j), part);
 		System.out.println("(" + i + ", " + j + ") : " + s);
 	}
 	
@@ -73,7 +71,7 @@ public class Main {
 			for (int j = Config.BOARDLENGTH - 1; j >= 0; j--) {
 				// 只计算空位
 				if (board[i][j] == null){
-					Place place = PlacePool.getPlace(i, j);
+					Place place = Place.of(i, j);
 					if (Base.hasNeighbor(board, place)) {
 						int whiteScore = PointEvaluate.pointEvaluate(board, place, Pt.WHITE);
 						score[0][i][j] = whiteScore;
